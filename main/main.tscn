@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://iovkauar3rx"]
+
+[ext_resource type="PackedScene" uid="uid://d383c2amhbhn" path="res://stage_progress/stage_progress.tscn" id="1_4c7np"]
+
+[node name="Main" type="Node2D"]
+
+[node name="StageProgress" parent="." instance=ExtResource("1_4c7np")]
