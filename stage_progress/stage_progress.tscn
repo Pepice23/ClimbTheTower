@@ -1,11 +1,15 @@
-[gd_scene format=3 uid="uid://d383c2amhbhn"]
+[gd_scene load_steps=2 format=3 uid="uid://d383c2amhbhn"]
+
+[ext_resource type="Script" path="res://stage_progress/stage_progress.gd" id="1_d05f6"]
 
 [node name="StageProgress" type="HBoxContainer"]
 anchors_preset = 10
 anchor_right = 1.0
+offset_top = 5.0
 offset_right = 1280.0
-offset_bottom = 30.0
+offset_bottom = 35.0
 grow_horizontal = 2
+script = ExtResource("1_d05f6")
 
 [node name="FloorProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(100, 25)
