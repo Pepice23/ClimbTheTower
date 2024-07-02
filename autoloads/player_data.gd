@@ -22,5 +22,5 @@ func reset_current_enemy():
 
 func increase_current_floor():
 	current_floor += 1
-	reset_current_enemy()
+	reset_current_enemy() # If the floor changes enemy will be reset
 	emit_signal("change_current_floor")
