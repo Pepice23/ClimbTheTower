@@ -7,8 +7,8 @@ extends HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
 	set_progress_fill_color()
+	set_defaults()
 	
 func set_progress_fill_color():
 	var style_box = StyleBoxFlat.new()
@@ -16,5 +16,6 @@ func set_progress_fill_color():
 	floor_progress_bar.add_theme_stylebox_override("fill", style_box)
 	enemy_progress_bar.add_theme_stylebox_override("fill", style_box)
 
-	floor_progress_bar.value = 5
-	enemy_progress_bar.value = 5
+func set_defaults():
+	floor_progress_bar.value = PlayerData.floor_progress
+	enemy_progress_bar.value = PlayerData.enemy_progress
