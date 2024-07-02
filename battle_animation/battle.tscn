@@ -147,7 +147,6 @@ _data = {
 [node name="Battle" type="Node2D"]
 
 [node name="Player" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(105, 105)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ojvc3")
@@ -163,6 +162,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_lnpsh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_43xxb")
 }
