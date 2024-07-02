@@ -9,24 +9,24 @@ script = ExtResource("1_6j8rb")
 [node name="StageProgress" parent="." instance=ExtResource("1_4c7np")]
 
 [node name="IncreaseEnemy" type="Button" parent="."]
-offset_left = 243.0
-offset_top = 55.0
-offset_right = 373.0
-offset_bottom = 86.0
+offset_left = 248.0
+offset_top = 376.0
+offset_right = 378.0
+offset_bottom = 407.0
 text = "Increase Enemy"
 
 [node name="ResetEnemy" type="Button" parent="."]
-offset_left = 383.0
-offset_top = 56.0
-offset_right = 513.0
-offset_bottom = 87.0
+offset_left = 376.0
+offset_top = 377.0
+offset_right = 506.0
+offset_bottom = 408.0
 text = "Reset Enemy"
 
 [node name="IncFloorResEnemy" type="Button" parent="."]
-offset_left = 252.0
-offset_top = 99.0
-offset_right = 506.0
-offset_bottom = 130.0
+offset_left = 266.0
+offset_top = 332.0
+offset_right = 520.0
+offset_bottom = 363.0
 text = "Increase Floor and Reset Enemy"
 
 [connection signal="pressed" from="IncreaseEnemy" to="." method="_on_increase_enemy_pressed"]
