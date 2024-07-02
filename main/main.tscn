@@ -33,6 +33,10 @@ text = "Increase Floor and Reset Enemy"
 [node name="Battle" parent="." instance=ExtResource("3_boxds")]
 position = Vector2(0, 35)
 
+[node name="AttackTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="IncreaseEnemy" to="." method="_on_increase_enemy_pressed"]
 [connection signal="pressed" from="ResetEnemy" to="." method="_on_reset_enemy_pressed"]
 [connection signal="pressed" from="IncFloorResEnemy" to="." method="_on_inc_floor_res_enemy_pressed"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
