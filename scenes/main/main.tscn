@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://iovkauar3rx"]
+[gd_scene load_steps=7 format=3 uid="uid://iovkauar3rx"]
 
 [ext_resource type="PackedScene" uid="uid://d383c2amhbhn" path="res://scenes/stage_progress/stage_progress.tscn" id="1_4c7np"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_6j8rb"]
 [ext_resource type="PackedScene" uid="uid://cf0afk4rc8q5s" path="res://scenes/battle_animation/battle.tscn" id="3_boxds"]
 [ext_resource type="PackedScene" uid="uid://cr422mechuym5" path="res://scenes/enemy_stat_display/enemy_stat_display.tscn" id="4_nqcjs"]
 [ext_resource type="PackedScene" uid="uid://bj3sg4vfg7xas" path="res://scenes/player_stat_display/player_stat_display.tscn" id="5_uc7g2"]
+[ext_resource type="Texture2D" uid="uid://mqbonhwar1bc" path="res://assets/ui/attack-button.png" id="6_ijt7m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6j8rb")
@@ -48,6 +49,15 @@ offset_bottom = 365.0
 offset_top = 250.0
 offset_right = 500.0
 offset_bottom = 365.0
+
+[node name="AttackButton" type="TextureButton" parent="."]
+offset_left = 509.0
+offset_top = 250.0
+offset_right = 769.0
+offset_bottom = 400.0
+texture_normal = ExtResource("6_ijt7m")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="IncreaseEnemy" to="." method="_on_increase_enemy_pressed"]
 [connection signal="pressed" from="ResetEnemy" to="." method="_on_reset_enemy_pressed"]
