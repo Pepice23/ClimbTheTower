@@ -7,6 +7,7 @@ var enemy_max = 15
 
 signal change_current_enemy
 signal change_current_floor
+signal show_boss_timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,10 +16,12 @@ func _ready():
 func increase_current_enemy():
 	current_enemy += 1
 	emit_signal("change_current_enemy")
+	emit_signal("show_boss_timer")
 
 func reset_current_enemy():
 	current_enemy = 1
 	emit_signal("change_current_enemy")
+	emit_signal("show_boss_timer")
 
 func increase_current_floor():
 	current_floor += 1
