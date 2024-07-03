@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d383c2amhbhn"]
 
-[ext_resource type="Script" path="res://stage_progress/stage_progress.gd" id="1_d05f6"]
+[ext_resource type="Script" path="res://scenes/stage_progress/stage_progress.gd" id="1_d05f6"]
 
 [node name="StageProgress" type="HBoxContainer"]
 anchors_preset = 10
