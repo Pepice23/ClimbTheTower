@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-@onready var level_text = $HBoxContainer/LevelText
+@onready var enemy_level_text = $HBoxContainer/LevelText
 @onready var hp_progress_bar = $HPProgressBar
 @onready var hp_progress_bar_text = $HPProgressBar/HPProgressBarLabel
 @onready var boss_timer_container = $BossTimerContainer
@@ -12,7 +12,7 @@ func _ready():
 	set_defaults()
 	set_boss_defaults()
 	PlayerData.connect("show_boss_timer", toggle_boss_timer_container_visibility)
-	PlayerData.connect("change_enemy_level", level_update)
+	PlayerData.connect("change_enemy_level", enemy_level_update)
 	PlayerData.connect("change_enemy_health", update_hp_progress)
 
 func toggle_boss_timer_container_visibility():
@@ -21,8 +21,8 @@ func toggle_boss_timer_container_visibility():
 	else:
 		boss_timer_container.visible = false
 
-func level_update():
-	level_text.text = str(PlayerData.current_floor)
+func enemy_level_update():
+	enemy_level_text.text = str(PlayerData.current_floor)
 
 func set_progress_fill_color():
 	var style_box_hp = StyleBoxFlat.new()
