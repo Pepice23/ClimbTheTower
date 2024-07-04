@@ -4,11 +4,13 @@ var current_floor = 1
 var current_enemy = 1
 var floor_max = 100
 var enemy_max = 15
+var player_damage = 10
 
 signal change_current_enemy
 signal change_current_floor
 signal show_boss_timer
 signal change_enemy_level
+signal change_enemy_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,3 +31,8 @@ func increase_current_floor():
 	reset_current_enemy() # If the floor changes enemy will be reset
 	emit_signal("change_current_floor")
 	emit_signal("change_enemy_level")
+
+func player_manual_attack():
+	if EnemyData.enemy_current_hp >= player_damage:
+		EnemyData.enemy_current_hp -= player_damage
+		emit_signal("change_enemy_health")

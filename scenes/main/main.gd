@@ -17,3 +17,6 @@ func _on_inc_floor_res_enemy_pressed():
 
 func _on_attack_timer_timeout():
 	animation_player.play("weapon_attack")
+
+func _on_attack_button_pressed():
+	PlayerData.player_manual_attack()
