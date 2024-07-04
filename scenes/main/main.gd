@@ -20,3 +20,6 @@ func _on_add_damage_pressed():
 
 func _on_add_gold_pressed():
 	PlayerData.increase_current_gold()
+
+func _on_choose_bg_pressed():
+	Helpers.choose_random_background()

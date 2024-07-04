@@ -69,8 +69,17 @@ offset_bottom = 496.0
 text = "Add Gold
 "
 
+[node name="ChooseBG" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 581.0
+offset_right = 297.0
+offset_bottom = 612.0
+text = "Choose Random Background
+"
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]
 [connection signal="pressed" from="AddXP" to="." method="_on_add_xp_pressed"]
 [connection signal="pressed" from="AddDamage" to="." method="_on_add_damage_pressed"]
 [connection signal="pressed" from="AddGold" to="." method="_on_add_gold_pressed"]
+[connection signal="pressed" from="ChooseBG" to="." method="_on_choose_bg_pressed"]
