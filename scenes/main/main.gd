@@ -20,3 +20,6 @@ func _on_attack_timer_timeout():
 
 func _on_attack_button_pressed():
 	PlayerData.player_manual_attack()
+
+func _on_add_xp_pressed():
+	PlayerData.increase_current_xp(80)

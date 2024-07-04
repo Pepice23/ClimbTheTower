@@ -59,8 +59,17 @@ texture_normal = ExtResource("6_ijt7m")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="AddXP" type="Button" parent="."]
+offset_left = 25.0
+offset_top = 428.0
+offset_right = 124.0
+offset_bottom = 459.0
+text = "Add 80% XP
+"
+
 [connection signal="pressed" from="IncreaseEnemy" to="." method="_on_increase_enemy_pressed"]
 [connection signal="pressed" from="ResetEnemy" to="." method="_on_reset_enemy_pressed"]
 [connection signal="pressed" from="IncFloorResEnemy" to="." method="_on_inc_floor_res_enemy_pressed"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="AddXP" to="." method="_on_add_xp_pressed"]

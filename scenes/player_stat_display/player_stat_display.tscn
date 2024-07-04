@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bj3sg4vfg7xas"]
+[gd_scene load_steps=2 format=3 uid="uid://bj3sg4vfg7xas"]
+
+[ext_resource type="Script" path="res://scenes/player_stat_display/player_stat_display.gd" id="1_6wqfp"]
 
 [node name="PlayerStatDisplay" type="VBoxContainer"]
 anchors_preset = -1
@@ -7,6 +9,7 @@ anchor_bottom = 1.0
 offset_bottom = -570.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6wqfp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
