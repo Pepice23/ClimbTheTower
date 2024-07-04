@@ -1,5 +1,6 @@
 extends Node
 
+var random_background = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -35,8 +36,7 @@ func choose_random_background():
 		dir.list_dir_end()
 		
 		if background_files.size() > 0:
-			var random_background = background_files[randi() % background_files.size()]
-			print(random_background)
+			random_background = background_files[randi() % background_files.size()]
 			# var background_sprite = get_node("BackgroundSprite")
 			# background_sprite.texture = load(random_background)
 	else:

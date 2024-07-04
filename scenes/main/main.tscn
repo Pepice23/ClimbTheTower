@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d383c2amhbhn" path="res://scenes/stage_progress/stage_progress.tscn" id="1_4c7np"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_6j8rb"]
-[ext_resource type="Texture2D" uid="uid://bc5nj7mwnavwk" path="res://assets/backgrounds/bg1.png" id="2_uecxl"]
+[ext_resource type="Texture2D" uid="uid://do4sgoi4wlrlk" path="res://assets/backgrounds/bg3.png" id="2_mprj8"]
 [ext_resource type="PackedScene" uid="uid://cf0afk4rc8q5s" path="res://scenes/battle_animation/battle.tscn" id="3_boxds"]
 [ext_resource type="PackedScene" uid="uid://cr422mechuym5" path="res://scenes/enemy_stat_display/enemy_stat_display.tscn" id="4_nqcjs"]
 [ext_resource type="PackedScene" uid="uid://bj3sg4vfg7xas" path="res://scenes/player_stat_display/player_stat_display.tscn" id="5_uc7g2"]
@@ -13,9 +13,9 @@ script = ExtResource("1_6j8rb")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(640, 255)
-scale = Vector2(0.712054, 0.5)
-texture = ExtResource("2_uecxl")
+position = Vector2(640, 260)
+scale = Vector2(1.25, 0.5)
+texture = ExtResource("2_mprj8")
 
 [node name="StageProgress" parent="." instance=ExtResource("1_4c7np")]
 

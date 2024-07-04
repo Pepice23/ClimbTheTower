@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var animation_player = $Battle/AnimationPlayer
+@onready var background_image = $Background
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,3 +24,4 @@ func _on_add_gold_pressed():
 
 func _on_choose_bg_pressed():
 	Helpers.choose_random_background()
+	background_image.texture = load(Helpers.random_background)
