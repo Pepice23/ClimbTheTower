@@ -12,6 +12,8 @@ func _ready():
 	PlayerData.connect("change_player_level", player_level_update)
 	PlayerData.connect("change_player_current_xp", update_current_xp_progress)
 	PlayerData.connect("change_player_max_xp", update_max_xp_progress)
+	PlayerData.connect("change_player_damage", update_damage_text)
+	PlayerData.connect("change_player_gold", update_gold_text)
 
 func player_level_update():
 	player_level_text.text = str(PlayerData.player_level)
@@ -27,6 +29,8 @@ func set_defaults():
 	xp_progress_bar.max_value = PlayerData.player_max_xp
 	update_current_xp_progress()
 	update_max_xp_progress()
+	update_damage_text()
+	update_gold_text()
 
 func update_current_xp_progress():
 	xp_progress_bar.value = PlayerData.player_current_xp
@@ -37,7 +41,7 @@ func update_max_xp_progress():
 	xp_progress_bar_text.text = "XP: %s / %s" % [Helpers.format_number(PlayerData.player_current_xp), Helpers.format_number(PlayerData.player_max_xp)]
 
 func update_damage_text():
-	damage_text.text = "Damage: %s" % [Helpers.format_number(PlayerData.player_damage)]
+	damage_text.text = "%s" % [Helpers.format_number(PlayerData.player_damage)]
 
 func update_gold_text():
-	gold_text.text = "Gold: %s" % [Helpers.format_number(PlayerData.player_gold)]
+	gold_text.text = "%s" % [Helpers.format_number(PlayerData.player_gold)]

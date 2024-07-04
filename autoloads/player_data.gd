@@ -18,6 +18,8 @@ signal change_enemy_health
 signal change_player_current_xp
 signal change_player_max_xp
 signal change_player_level
+signal change_player_damage
+signal change_player_gold
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +48,6 @@ func player_manual_attack():
 
 func increase_current_xp(percent=80):
 	player_current_xp += percent / 100.0 * player_max_xp
-	print(player_current_xp)
 	check_and_level_up()
 	emit_signal("change_player_current_xp")
 
@@ -62,4 +63,11 @@ func check_and_level_up():
 		player_level += 1
 		emit_signal("change_player_level")
 		calculate_new_max_xp()
-		
+
+func increase_current_gold(amount=1000):
+	player_gold += amount
+	emit_signal("change_player_gold")
+
+func increase_current_damage(amount=10):
+	player_damage += amount
+	emit_signal("change_player_damage")
