@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://iovkauar3rx"]
+[gd_scene load_steps=8 format=3 uid="uid://iovkauar3rx"]
 
 [ext_resource type="PackedScene" uid="uid://d383c2amhbhn" path="res://scenes/stage_progress/stage_progress.tscn" id="1_4c7np"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_6j8rb"]
+[ext_resource type="Texture2D" uid="uid://bc5nj7mwnavwk" path="res://assets/backgrounds/bg1.png" id="2_uecxl"]
 [ext_resource type="PackedScene" uid="uid://cf0afk4rc8q5s" path="res://scenes/battle_animation/battle.tscn" id="3_boxds"]
 [ext_resource type="PackedScene" uid="uid://cr422mechuym5" path="res://scenes/enemy_stat_display/enemy_stat_display.tscn" id="4_nqcjs"]
 [ext_resource type="PackedScene" uid="uid://bj3sg4vfg7xas" path="res://scenes/player_stat_display/player_stat_display.tscn" id="5_uc7g2"]
@@ -10,28 +11,13 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6j8rb")
 
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(640, 255)
+scale = Vector2(0.712054, 0.5)
+texture = ExtResource("2_uecxl")
+
 [node name="StageProgress" parent="." instance=ExtResource("1_4c7np")]
-
-[node name="IncreaseEnemy" type="Button" parent="."]
-offset_left = 101.0
-offset_top = 644.0
-offset_right = 231.0
-offset_bottom = 675.0
-text = "Increase Enemy"
-
-[node name="ResetEnemy" type="Button" parent="."]
-offset_left = 255.0
-offset_top = 641.0
-offset_right = 385.0
-offset_bottom = 672.0
-text = "Reset Enemy"
-
-[node name="IncFloorResEnemy" type="Button" parent="."]
-offset_left = 404.0
-offset_top = 640.0
-offset_right = 658.0
-offset_bottom = 671.0
-text = "Increase Floor and Reset Enemy"
 
 [node name="Battle" parent="." instance=ExtResource("3_boxds")]
 position = Vector2(0, 35)
@@ -83,9 +69,6 @@ offset_bottom = 496.0
 text = "Add Gold
 "
 
-[connection signal="pressed" from="IncreaseEnemy" to="." method="_on_increase_enemy_pressed"]
-[connection signal="pressed" from="ResetEnemy" to="." method="_on_reset_enemy_pressed"]
-[connection signal="pressed" from="IncFloorResEnemy" to="." method="_on_inc_floor_res_enemy_pressed"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]
 [connection signal="pressed" from="AddXP" to="." method="_on_add_xp_pressed"]
