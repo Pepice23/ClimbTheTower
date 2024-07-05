@@ -23,7 +23,6 @@ texture = ExtResource("2_mprj8")
 position = Vector2(0, 35)
 
 [node name="AttackTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="EnemyStatDisplay" parent="." instance=ExtResource("4_nqcjs")]
 offset_left = 777.0
