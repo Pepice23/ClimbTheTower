@@ -11,6 +11,7 @@ func _ready():
 	Battle.connect("stop_attack_timer", battle_finished)
 	Battle.connect("player_wins_boss_battle", player_wins_boss_battle)
 	Battle.connect("player_loses_boss_battle", player_loses_boss_battle)
+	Battle.connect("player_wins_normal_battle", player_wins_normal_battle)
 	Battle.start_battle()
 
 func _on_attack_timer_timeout():
@@ -45,9 +46,6 @@ func on_attack_animation_finished(animation_name):
 	if animation_name == "RESET":
 		animation_player.play("enemy_disappear")
 	if animation_name == "enemy_disappear":
-		PlayerData.increase_current_enemy()
-		PlayerData.increase_current_xp(5)
-		PlayerData.increase_current_gold(10)
 		animation_player.play("enemy_appear")
 	if animation_name == "enemy_appear":
 		EnemyData.prepare_next_enemy()
@@ -56,6 +54,11 @@ func on_attack_animation_finished(animation_name):
 func battle_finished():
 	attack_timer.stop()
 	animation_player.play("RESET")
+
+func player_wins_normal_battle():
+	PlayerData.increase_current_enemy()
+	PlayerData.increase_current_xp(5)
+	PlayerData.increase_current_gold(10)
 
 func player_wins_boss_battle():
 	PlayerData.increase_current_floor()

@@ -7,6 +7,7 @@ signal player_auto_attack
 signal stop_attack_timer
 signal player_wins_boss_battle
 signal player_loses_boss_battle
+signal player_wins_normal_battle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +34,7 @@ func auto_attack():
 	if EnemyData.enemy_current_hp <= 0:
 		EnemyData.enemy_current_hp = 0
 		emit_signal("stop_attack_timer")
+		emit_signal("player_wins_normal_battle")
 	emit_signal("player_auto_attack")
 
 func boss_auto_attack():
