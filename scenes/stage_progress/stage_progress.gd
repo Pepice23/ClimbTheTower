@@ -21,6 +21,8 @@ func set_progress_fill_color():
 func set_defaults():
 	floor_progress_bar.value = PlayerData.current_floor
 	enemy_progress_bar.value = PlayerData.current_enemy
+	update_floor_progress()
+	update_enemy_progress()
 
 func update_floor_progress():
 	floor_progress_bar.value = PlayerData.current_floor
