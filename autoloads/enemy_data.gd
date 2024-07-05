@@ -6,6 +6,7 @@ var boss_time_max = 30
 var boss_time_current = 30
 
 signal change_enemy_health
+signal change_boss_timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,3 +20,7 @@ func player_manual_attack():
 	if enemy_current_hp >= PlayerData.player_damage:
 		enemy_current_hp -= PlayerData.player_damage
 		emit_signal("change_enemy_health")
+
+func decrease_boss_timer():
+	boss_time_current -= 1
+	emit_signal("change_boss_timer")

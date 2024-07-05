@@ -1,8 +1,12 @@
 extends Node
 
-signal begin_normal_battle
+var boss_battle = false
+
+signal begin_battle
 signal player_auto_attack
 signal stop_attack_timer
+signal player_wins_boss_battle
+signal player_loses_boss_battle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,10 +20,12 @@ func start_battle():
 
 func start_boss_battle():
 	print("boss battle started")
+	boss_battle = true
+	emit_signal("begin_battle")
 
 func start_normal_battle():
 	print("normal battle started")
-	emit_signal("begin_normal_battle")
+	emit_signal("begin_battle")
 
 func auto_attack():
 	if EnemyData.enemy_current_hp > 0:
@@ -28,3 +34,17 @@ func auto_attack():
 		EnemyData.enemy_current_hp = 0
 		emit_signal("stop_attack_timer")
 	emit_signal("player_auto_attack")
+
+func boss_auto_attack():
+	if EnemyData.enemy_current_hp > 0 and EnemyData.boss_time_current > 0:
+		EnemyData.enemy_current_hp -= PlayerData.player_damage
+	if EnemyData.enemy_current_hp <= 0 and EnemyData.boss_time_current > 0:
+		EnemyData.enemy_current_hp = 0
+		emit_signal("stop_attack_timer")
+		emit_signal("player_wins_boss_battle")
+	if EnemyData.boss_time_current == 0 and EnemyData.enemy_current_hp > 0:
+		print("Player lost boss battle")
+		emit_signal("stop_attack_timer")
+		emit_signal("player_loses_boss_battle")
+	emit_signal("player_auto_attack")
+	

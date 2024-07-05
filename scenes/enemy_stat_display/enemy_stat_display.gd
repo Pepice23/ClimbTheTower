@@ -14,6 +14,7 @@ func _ready():
 	PlayerData.connect("show_boss_timer", toggle_boss_timer_container_visibility)
 	PlayerData.connect("change_enemy_level", enemy_level_update)
 	EnemyData.connect("change_enemy_health", update_hp_progress)
+	EnemyData.connect("change_boss_timer", update_boss_timer_progress)
 	Battle.connect("player_auto_attack", update_hp_progress)
 
 func toggle_boss_timer_container_visibility():
