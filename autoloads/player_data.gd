@@ -4,7 +4,7 @@ var current_floor = 1
 var current_enemy = 1
 var floor_max = 100
 var enemy_max = 15
-var player_damage = 10
+var player_damage = 150
 var player_level = 1
 var player_current_xp = 0
 var player_max_xp = 400
@@ -40,11 +40,6 @@ func increase_current_floor():
 	reset_current_enemy() # If the floor changes enemy will be reset
 	emit_signal("change_current_floor")
 	emit_signal("change_enemy_level")
-
-func player_manual_attack():
-	if EnemyData.enemy_current_hp >= player_damage:
-		EnemyData.enemy_current_hp -= player_damage
-		emit_signal("change_enemy_health")
 
 func increase_current_xp(percent=80):
 	player_current_xp += percent / 100.0 * player_max_xp

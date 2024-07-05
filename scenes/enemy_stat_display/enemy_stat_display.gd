@@ -13,7 +13,8 @@ func _ready():
 	set_boss_defaults()
 	PlayerData.connect("show_boss_timer", toggle_boss_timer_container_visibility)
 	PlayerData.connect("change_enemy_level", enemy_level_update)
-	PlayerData.connect("change_enemy_health", update_hp_progress)
+	EnemyData.connect("change_enemy_health", update_hp_progress)
+	Battle.connect("player_auto_attack", update_hp_progress)
 
 func toggle_boss_timer_container_visibility():
 	if PlayerData.current_enemy == PlayerData.enemy_max:
