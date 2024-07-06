@@ -1,10 +1,10 @@
 extends Node
 
 var current_floor = 1
-var current_enemy = 14
+var current_enemy = 1
 var floor_max = 100
 var enemy_max = 15
-var player_damage = 10
+var player_damage = 150
 var player_level = 1
 var player_current_xp = 0
 var player_max_xp = 400
@@ -38,7 +38,8 @@ func reset_current_enemy():
 func increase_current_floor():
 	current_floor += 1
 	reset_current_enemy() # If the floor changes enemy will be reset
-	Battle.boss_battle = false
+	Battle.boss_battle = false # When the floor changes it will be a normal battle
+	EnemyData.reset_boss_timer()
 	emit_signal("change_current_floor")
 	emit_signal("change_enemy_level")
 
@@ -46,7 +47,13 @@ func reset_current_floor():
 	reset_current_enemy()
 	Battle.boss_battle = false
 
-func increase_current_xp(percent=80):
+func increase_current_xp_flat(percent=80):
+	player_current_xp += percent / 100.0 * player_max_xp
+	check_and_level_up()
+	emit_signal("change_player_current_xp")
+
+func increase_current_xp_minmax(min_percent=4, max_percent=7):
+	var percent = randi() % (max_percent - min_percent + 1) + min_percent
 	player_current_xp += percent / 100.0 * player_max_xp
 	check_and_level_up()
 	emit_signal("change_player_current_xp")

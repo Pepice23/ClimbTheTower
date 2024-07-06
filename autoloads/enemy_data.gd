@@ -24,3 +24,7 @@ func player_manual_attack():
 func decrease_boss_timer():
 	boss_time_current -= 1
 	emit_signal("change_boss_timer")
+
+func reset_boss_timer():
+	boss_time_current = boss_time_max
+	emit_signal("change_boss_timer")

@@ -17,21 +17,6 @@ func _ready():
 func _on_attack_timer_timeout():
 	animation_player.play("weapon_attack")
 
-func _on_attack_button_pressed():
-	EnemyData.player_manual_attack()
-
-func _on_add_xp_pressed():
-	PlayerData.increase_current_xp(80)
-
-func _on_add_damage_pressed():
-	PlayerData.increase_current_damage()
-
-func _on_add_gold_pressed():
-	PlayerData.increase_current_gold()
-
-func _on_choose_bg_pressed():
-	pass
-
 func on_begin_battle():
 	attack_timer.start()
 
@@ -57,12 +42,12 @@ func battle_finished():
 
 func player_wins_normal_battle():
 	PlayerData.increase_current_enemy()
-	PlayerData.increase_current_xp(5)
+	PlayerData.increase_current_xp_minmax()
 	PlayerData.increase_current_gold(10)
 
 func player_wins_boss_battle():
 	PlayerData.increase_current_floor()
-	PlayerData.increase_current_xp(20)
+	PlayerData.increase_current_xp_flat(20)
 	PlayerData.increase_current_gold(40)
 	Helpers.choose_random_background()
 	background_image.texture = load(Helpers.random_background)
