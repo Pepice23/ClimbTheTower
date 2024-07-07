@@ -60,5 +60,6 @@ func create_random_weapon():
 	var weapon_multiplier = weapon_quality[1]
 	weapon_damage = base_damage * weapon_multiplier * pow(1.1, PlayerData.player_level)
 	print(weapon_name, weapon_damage)
-	PlayerData.player_weapon = [weapon_name, weapon_damage]
-	PlayerData.player_weapon_changed()
+	if weapon_damage > PlayerData.player_weapon[1]:
+		PlayerData.player_weapon = [weapon_name, weapon_damage]
+		PlayerData.player_weapon_changed()
