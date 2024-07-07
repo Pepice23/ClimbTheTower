@@ -9,7 +9,7 @@ var player_level = 1
 var player_current_xp = 0
 var player_max_xp = 400
 var player_gold = 0
-var player_weapon = []
+var player_weapon = ["Starter Weapon", 7]
 var player_armor_multiplier = 1
 
 signal change_current_enemy
