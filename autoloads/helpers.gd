@@ -41,3 +41,7 @@ func choose_random_background():
 			# background_sprite.texture = load(random_background)
 	else:
 		print("Failed to open directory: " + background_folder)
+
+func dice_roll():
+	var roll = randi() % 100 + 1
+	return roll
