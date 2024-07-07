@@ -9,6 +9,7 @@ var player_level = 1
 var player_current_xp = 0
 var player_max_xp = 400
 var player_gold = 0
+var player_weapon = []
 var player_armor_multiplier = 1
 
 signal change_current_enemy
@@ -21,6 +22,8 @@ signal change_player_max_xp
 signal change_player_level
 signal change_player_damage
 signal change_player_gold
+signal change_player_weapon_name_text
+signal change_player_weapon_damage_text
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -79,3 +82,9 @@ func increase_current_gold(amount=1000):
 func increase_current_damage(amount=10):
 	player_damage += amount
 	emit_signal("change_player_damage")
+
+func player_weapon_changed():
+	player_damage = player_weapon[1]
+	emit_signal("change_player_damage")
+	emit_signal("change_player_weapon_name_text")
+	emit_signal("change_player_weapon_damage_text")

@@ -44,11 +44,15 @@ func player_wins_normal_battle():
 	PlayerData.increase_current_enemy()
 	PlayerData.increase_current_xp_minmax()
 	PlayerData.increase_current_gold(10)
+	var roll = Helpers.dice_roll()
+	if roll > 95:
+		Weapons.create_random_weapon()
 
 func player_wins_boss_battle():
 	PlayerData.increase_current_floor()
 	PlayerData.increase_current_xp_flat(20)
 	PlayerData.increase_current_gold(40)
+	Weapons.create_random_weapon()
 	Helpers.choose_random_background()
 	background_image.texture = load(Helpers.random_background)
 
