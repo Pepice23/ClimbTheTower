@@ -13,8 +13,8 @@ script = ExtResource("1_6j8rb")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(640, 260)
-scale = Vector2(1.25, 0.5)
+position = Vector2(639.5, 360.5)
+scale = Vector2(1.24902, 0.696289)
 texture = ExtResource("2_mprj8")
 
 [node name="StageProgress" parent="." instance=ExtResource("1_4c7np")]
@@ -25,25 +25,27 @@ position = Vector2(0, 35)
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.05
 
-[node name="EnemyStatDisplay" parent="." instance=ExtResource("4_nqcjs")]
-offset_left = 777.0
-offset_top = 250.0
-offset_right = 1277.0
-offset_bottom = 365.0
-
 [node name="PlayerStatDisplay" parent="." instance=ExtResource("5_uc7g2")]
-offset_top = 250.0
-offset_right = 500.0
-offset_bottom = 365.0
+offset_left = 3.0
+offset_top = 248.0
+offset_right = 527.0
+offset_bottom = 701.0
 
 [node name="AttackButton" type="TextureButton" parent="."]
-offset_left = 509.0
-offset_top = 250.0
-offset_right = 769.0
-offset_bottom = 400.0
+custom_minimum_size = Vector2(200, 100)
+offset_left = 540.0
+offset_top = 245.0
+offset_right = 740.0
+offset_bottom = 345.0
 texture_normal = ExtResource("6_ijt7m")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="EnemyStatDisplay" parent="." instance=ExtResource("4_nqcjs")]
+custom_minimum_size = Vector2(300, 100)
+offset_left = 768.0
+offset_top = 247.0
+offset_right = 1277.0
+offset_bottom = 347.0
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
-[connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]

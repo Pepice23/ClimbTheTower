@@ -1,15 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj3sg4vfg7xas"]
+[gd_scene load_steps=4 format=3 uid="uid://bj3sg4vfg7xas"]
 
 [ext_resource type="Script" path="res://scenes/player_stat_display/player_stat_display.gd" id="1_6wqfp"]
+[ext_resource type="PackedScene" uid="uid://d2gkwlyod87m6" path="res://scenes/player_stat_display/weapon_display.tscn" id="2_y5aia"]
+[ext_resource type="PackedScene" uid="uid://cjteay1q2a11u" path="res://scenes/player_stat_display/armor_display.tscn" id="3_e0xak"]
 
 [node name="PlayerStatDisplay" type="VBoxContainer"]
 anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_bottom = -570.0
+anchor_left = -0.0015625
+anchor_top = -0.00138889
+anchor_right = 0.407813
+anchor_bottom = 0.630556
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wqfp")
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -84,3 +88,16 @@ theme_override_font_sizes/font_size = 18
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlayerEquipment" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Equipment:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WeaponDisplay" parent="." instance=ExtResource("2_y5aia")]
+layout_mode = 2
+
+[node name="ArmorDisplay" parent="." instance=ExtResource("3_e0xak")]
+layout_mode = 2
