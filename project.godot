@@ -22,6 +22,7 @@ PlayerData="*res://autoloads/player_data.gd"
 Helpers="*res://autoloads/helpers.gd"
 EnemyData="*res://autoloads/enemy_data.gd"
 Battle="*res://autoloads/battle.gd"
+Weapons="*res://autoloads/weapons.gd"
 
 [display]
 
