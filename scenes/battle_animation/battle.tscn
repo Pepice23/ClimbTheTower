@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/battle_animation/battle.gd" id="1_m2wkn"]
 [ext_resource type="Texture2D" uid="uid://bjpk7y5k6k633" path="res://assets/characters/player/andaric.png" id="1_ojvc3"]
 [ext_resource type="Texture2D" uid="uid://bvhboj1lscid0" path="res://assets/weapons/poor/p3.png" id="2_3p8m5"]
-[ext_resource type="Texture2D" uid="uid://clno4ljjgj2sl" path="res://assets/characters/enemies/glacia.png" id="3_lnpsh"]
+[ext_resource type="Texture2D" uid="uid://pgrdcqpppswy" path="res://assets/characters/enemies/enemy1.png" id="4_ku5ho"]
 
 [sub_resource type="Animation" id="Animation_54fsq"]
 length = 0.001
@@ -149,7 +149,7 @@ texture = ExtResource("2_3p8m5")
 [node name="Enemy" type="Sprite2D" parent="."]
 position = Vector2(1175, 105)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_lnpsh")
+texture = ExtResource("4_ku5ho")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

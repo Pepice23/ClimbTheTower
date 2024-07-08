@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clno4ljjgj2sl"
-path="res://.godot/imported/glacia.png-94cb7b51684b932099a4320b0da764de.ctex"
+uid="uid://bpyfl3x652gsm"
+path="res://.godot/imported/enemy6.png-4de68b0c13a2938c05e5621f974d1a34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/glacia.png"
-dest_files=["res://.godot/imported/glacia.png-94cb7b51684b932099a4320b0da764de.ctex"]
+source_file="res://assets/characters/enemies/enemy6.png"
+dest_files=["res://.godot/imported/enemy6.png-4de68b0c13a2938c05e5621f974d1a34.ctex"]
 
 [params]
 
