@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cf0afk4rc8q5s"]
 
 [ext_resource type="Texture2D" uid="uid://bjpk7y5k6k633" path="res://assets/characters/player/andaric.png" id="1_ojvc3"]
-[ext_resource type="Texture2D" uid="uid://dly7bu61fqklf" path="res://assets/weapons/rare/weapon.png" id="2_1le33"]
+[ext_resource type="Texture2D" uid="uid://bvhboj1lscid0" path="res://assets/weapons/poor/p3.png" id="2_3p8m5"]
 [ext_resource type="Texture2D" uid="uid://clno4ljjgj2sl" path="res://assets/characters/enemies/glacia.png" id="3_lnpsh"]
 
 [sub_resource type="Animation" id="Animation_54fsq"]
@@ -142,7 +142,7 @@ texture = ExtResource("1_ojvc3")
 [node name="Weapon" type="Sprite2D" parent="."]
 position = Vector2(265, 110)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_1le33")
+texture = ExtResource("2_3p8m5")
 
 [node name="Enemy" type="Sprite2D" parent="."]
 position = Vector2(1175, 105)
