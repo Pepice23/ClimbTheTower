@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2gkwlyod87m6"]
 
 [ext_resource type="Script" path="res://scenes/player_stat_display/weapon_display.gd" id="1_japdp"]
-[ext_resource type="Texture2D" uid="uid://dly7bu61fqklf" path="res://assets/weapons/weapon.png" id="1_ydikq"]
+[ext_resource type="Texture2D" uid="uid://dly7bu61fqklf" path="res://assets/weapons/rare/weapon.png" id="1_ydikq"]
 
 [node name="WeaponDisplay" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 150)
