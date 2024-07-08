@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cf0afk4rc8q5s"]
+[gd_scene load_steps=12 format=3 uid="uid://cf0afk4rc8q5s"]
 
+[ext_resource type="Script" path="res://scenes/battle_animation/battle.gd" id="1_m2wkn"]
 [ext_resource type="Texture2D" uid="uid://bjpk7y5k6k633" path="res://assets/characters/player/andaric.png" id="1_ojvc3"]
 [ext_resource type="Texture2D" uid="uid://bvhboj1lscid0" path="res://assets/weapons/poor/p3.png" id="2_3p8m5"]
 [ext_resource type="Texture2D" uid="uid://clno4ljjgj2sl" path="res://assets/characters/enemies/glacia.png" id="3_lnpsh"]
@@ -133,6 +134,7 @@ _data = {
 }
 
 [node name="Battle" type="Node2D"]
+script = ExtResource("1_m2wkn")
 
 [node name="Player" type="Sprite2D" parent="."]
 position = Vector2(105, 105)

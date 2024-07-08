@@ -38,28 +38,35 @@ func get_armor_multiplier():
 
 func select_random_quality():
 	var weapon_quality
+	var wi = ""
 	var roll = Helpers.dice_roll()
 	if roll <= 50:
 		weapon_quality = "poor"
+		wi = Helpers.choose_random_weapon_image("poor")
 	elif roll > 50 and roll <= 75:
 		weapon_quality = "uncommon"
+		wi = Helpers.choose_random_weapon_image("uncommon")
 	elif roll > 75 and roll <= 90:
 		weapon_quality = "rare"
+		wi = Helpers.choose_random_weapon_image("rare")
 	elif roll > 90 and roll <= 98:
 		weapon_quality = "epic"
+		wi = Helpers.choose_random_weapon_image("epic")
 	elif roll > 98:
 		weapon_quality = "legendary"
+		wi = Helpers.choose_random_weapon_image("legendary")
 	var weapon_data_tuple = weapon_data[weapon_quality]
 	var weapon_name = weapon_data_tuple[0]
 	var weapon_multiplier = weapon_data_tuple[1]
-	return [weapon_name, weapon_multiplier]
+	return [weapon_name, weapon_multiplier, wi]
 
 func create_random_weapon():
 	var weapon_quality = select_random_quality()
 	var weapon_name = weapon_quality[0]
 	var weapon_multiplier = weapon_quality[1]
+	var weapon_image = weapon_quality[2]
 	weapon_damage = base_damage * weapon_multiplier * pow(1.1, PlayerData.player_level)
-	print(weapon_name, weapon_damage)
+	print(weapon_name, weapon_damage, weapon_image)
 	if weapon_damage > PlayerData.player_weapon[1]:
-		PlayerData.player_weapon = [weapon_name, weapon_damage]
+		PlayerData.player_weapon = [weapon_name, weapon_damage, weapon_image]
 		PlayerData.player_weapon_changed()

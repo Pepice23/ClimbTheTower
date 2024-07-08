@@ -9,7 +9,7 @@ var player_level = 1
 var player_current_xp = 0
 var player_max_xp = 400
 var player_gold = 0
-var player_weapon = ["Starter Weapon", 7]
+var player_weapon = ["Starter Weapon", 7, "res://assets/weapons/poor/p1.png"]
 var player_armor_multiplier = 1
 
 signal change_current_enemy
@@ -24,6 +24,7 @@ signal change_player_damage
 signal change_player_gold
 signal change_player_weapon_name_text
 signal change_player_weapon_damage_text
+signal change_player_weapon_image
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -88,3 +89,4 @@ func player_weapon_changed():
 	emit_signal("change_player_damage")
 	emit_signal("change_player_weapon_name_text")
 	emit_signal("change_player_weapon_damage_text")
+	emit_signal("change_player_weapon_image")
