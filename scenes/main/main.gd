@@ -3,6 +3,7 @@ extends Node2D
 @onready var animation_player = $Battle/AnimationPlayer
 @onready var background_image = $Background
 @onready var attack_timer = $AttackTimer
+@onready var attack_button = $AttackButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,7 @@ func _ready():
 	Battle.connect("player_wins_boss_battle", player_wins_boss_battle)
 	Battle.connect("player_loses_boss_battle", player_loses_boss_battle)
 	Battle.connect("player_wins_normal_battle", player_wins_normal_battle)
+	Battle.connect("disable_attack_button", disable_attack_button)
 	Battle.start_battle()
 
 func _on_attack_timer_timeout():
@@ -19,6 +21,7 @@ func _on_attack_timer_timeout():
 
 func on_begin_battle():
 	attack_timer.start()
+	attack_button.disabled = false
 
 func on_attack_animation_finished(animation_name):
 	if animation_name == "weapon_attack":
@@ -60,3 +63,9 @@ func player_wins_boss_battle():
 
 func player_loses_boss_battle():
 	PlayerData.reset_current_floor()
+
+func _on_attack_button_pressed():
+	Battle.player_manual_attack()
+
+func disable_attack_button():
+	attack_button.disabled = true

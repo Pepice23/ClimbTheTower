@@ -31,15 +31,15 @@ offset_top = 248.0
 offset_right = 527.0
 offset_bottom = 701.0
 
-[node name="AttackButton" type="TextureButton" parent="."]
+[node name="AttackButton" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)
 offset_left = 540.0
 offset_top = 245.0
 offset_right = 740.0
 offset_bottom = 345.0
-texture_normal = ExtResource("6_ijt7m")
-ignore_texture_size = true
-stretch_mode = 0
+icon = ExtResource("6_ijt7m")
+icon_alignment = 1
+expand_icon = true
 
 [node name="EnemyStatDisplay" parent="." instance=ExtResource("4_nqcjs")]
 custom_minimum_size = Vector2(300, 100)
