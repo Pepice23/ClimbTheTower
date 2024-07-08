@@ -2,6 +2,7 @@ extends Node
 
 var random_background = ""
 var random_weapon_image = ""
+var random_enemy_image = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -81,3 +82,24 @@ func choose_random_weapon_image(weapon_quality: String):
 		print("Failed to open directory: " + weapon_images_folder)
 	
 	return random_weapon_image
+
+func choose_random_enemy_image():
+	var enemy_images_folder = "res://assets/characters/enemies/"
+	var enemy_images_files = []
+	var dir = DirAccess.open(enemy_images_folder)
+	
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		
+		while file_name != "":
+			if not dir.current_is_dir() and file_name.to_lower().ends_with(".png"):
+				enemy_images_files.append(enemy_images_folder + "/" + file_name)
+			file_name = dir.get_next()
+		
+		dir.list_dir_end()
+		
+		if enemy_images_files.size() > 0:
+			random_enemy_image = enemy_images_files[randi() % enemy_images_files.size()]
+		else:
+			print("No PNG files found in directory: " + enemy_images_folder)

@@ -8,6 +8,7 @@ var base_hp = 10
 
 signal change_enemy_health
 signal change_boss_timer
+signal change_enemy_picture
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +17,9 @@ func _ready():
 func prepare_next_enemy():
 	enemy_max_hp = base_hp * 0.8 * pow(1.1, PlayerData.current_floor) * PlayerData.current_enemy + 1
 	enemy_current_hp = enemy_max_hp
+	Helpers.choose_random_enemy_image()
 	emit_signal("change_enemy_health")
+	emit_signal("change_enemy_picture")
 
 func player_manual_attack():
 	if enemy_current_hp >= PlayerData.player_damage:

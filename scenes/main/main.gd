@@ -30,10 +30,12 @@ func on_attack_animation_finished(animation_name):
 
 	if animation_name == "RESET":
 		animation_player.play("enemy_disappear")
+
 	if animation_name == "enemy_disappear":
-		animation_player.play("enemy_appear")
-	if animation_name == "enemy_appear":
 		EnemyData.prepare_next_enemy()
+		animation_player.play("enemy_appear")
+		
+	if animation_name == "enemy_appear":
 		Battle.start_battle()
 
 func battle_finished():
