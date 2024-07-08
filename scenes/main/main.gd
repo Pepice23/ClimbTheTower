@@ -65,7 +65,7 @@ func player_loses_boss_battle():
 	PlayerData.reset_current_floor()
 
 func _on_attack_button_pressed():
-	Battle.player_manual_attack()
+	EnemyData.player_manual_attack()
 
 func disable_attack_button():
 	attack_button.disabled = true

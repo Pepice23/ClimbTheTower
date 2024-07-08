@@ -49,3 +49,4 @@ offset_right = 1277.0
 offset_bottom = 347.0
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]
