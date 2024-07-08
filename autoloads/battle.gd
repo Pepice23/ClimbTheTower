@@ -20,12 +20,10 @@ func start_battle():
 		start_normal_battle()
 
 func start_boss_battle():
-	print("boss battle started")
 	boss_battle = true
 	emit_signal("begin_battle")
 
 func start_normal_battle():
-	print("normal battle started")
 	emit_signal("begin_battle")
 
 func auto_attack():
