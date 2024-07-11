@@ -1,10 +1,10 @@
 extends Node
 
 var weapon_data = {
-	"poor": ["Poor Weapon", 0.8],
-	"uncommon": ["Uncommon Weapon", 1],
-	"rare": ["Rare Weapon", 1.2],
-	"epic": ["Epic Weapon", 1.5],
+	"poor": ["Poor Weapon", 1],
+	"uncommon": ["Uncommon Weapon", 1.2],
+	"rare": ["Rare Weapon", 1.4],
+	"epic": ["Epic Weapon", 1.6],
 	"legendary": ["Legendary Weapon", 2]
 }
 var base_damage = 10
