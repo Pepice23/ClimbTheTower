@@ -2,6 +2,7 @@ extends Node
 
 var current_floor = 1
 var current_enemy = 1
+var total_enemy_count = 0
 var floor_max = 100
 var enemy_max = 15
 var player_damage = 7
@@ -32,6 +33,7 @@ func _ready():
 
 func increase_current_enemy():
 	current_enemy += 1
+	total_enemy_count += 1
 	emit_signal("change_current_enemy")
 	emit_signal("show_boss_timer")
 

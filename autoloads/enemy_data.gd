@@ -1,10 +1,12 @@
 extends Node
 
-var enemy_current_hp = 400
-var enemy_max_hp = 400
+var enemy_current_hp = 100
+var enemy_max_hp = 100
 var boss_time_max = 30
 var boss_time_current = 30
-var base_hp = 10
+var base_hp = 100
+var growth_rate = 0.05
+var enemy_increment = 0.05
 
 signal change_enemy_health
 signal change_boss_timer
@@ -15,7 +17,7 @@ func _ready():
 	pass # Replace with function body.
 
 func prepare_next_enemy():
-	enemy_max_hp = base_hp * 0.8 * pow(1.1, PlayerData.current_floor) * PlayerData.current_enemy + 1
+	set_initial_enemy_hp()
 	enemy_current_hp = enemy_max_hp
 	Helpers.choose_random_enemy_image()
 	emit_signal("change_enemy_health")
@@ -33,3 +35,6 @@ func decrease_boss_timer():
 func reset_boss_timer():
 	boss_time_current = boss_time_max
 	emit_signal("change_boss_timer")
+
+func set_initial_enemy_hp():
+	enemy_max_hp = base_hp * pow(1 + growth_rate, PlayerData.current_floor) * pow(1 + enemy_increment, PlayerData.total_enemy_count)
