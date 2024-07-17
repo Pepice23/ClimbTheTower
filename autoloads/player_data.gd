@@ -5,12 +5,12 @@ var current_enemy = 1
 var total_enemy_count = 0
 var floor_max = 100
 var enemy_max = 15
-var player_damage = 7
+var player_damage = 10
 var player_level = 1
 var player_current_xp = 0
 var player_max_xp = 400
 var player_gold = 0
-var player_weapon = ["Starter Weapon", 7, "res://assets/weapons/poor/p1.png"]
+var player_weapon = ["Starter Weapon", 10, "res://assets/weapons/poor/p1.png"]
 var player_armor_multiplier = 1
 
 signal change_current_enemy
@@ -59,7 +59,7 @@ func increase_current_xp_flat(percent=80):
 	check_and_level_up()
 	emit_signal("change_player_current_xp")
 
-func increase_current_xp_minmax(min_percent=4, max_percent=7):
+func increase_current_xp_minmax(min_percent=5, max_percent=7):
 	var percent = randi() % (max_percent - min_percent + 1) + min_percent
 	player_current_xp += percent / 100.0 * player_max_xp
 	check_and_level_up()

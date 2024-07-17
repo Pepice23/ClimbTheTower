@@ -5,8 +5,8 @@ var enemy_max_hp = 100
 var boss_time_max = 30
 var boss_time_current = 30
 var base_hp = 100
-var growth_rate = 0.05
-var enemy_increment = 0.05
+var growth_rate = 0.02
+var enemy_increment = 0.02
 
 signal change_enemy_health
 signal change_boss_timer
