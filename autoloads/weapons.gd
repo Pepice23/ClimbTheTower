@@ -9,32 +9,33 @@ var weapon_data = {
 }
 var base_damage = 10
 var weapon_damage = 0
+var weapon_scale_factor = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-func get_armor_multiplier():
+func get_weapon_scale_factor():
 	if PlayerData.player_level < 10:
-		return 1
+		weapon_scale_factor = 1.22
 	elif PlayerData.player_level >= 10 and PlayerData.player_level < 20:
-		return 2
+		weapon_scale_factor = 1.233
 	elif PlayerData.player_level >= 20 and PlayerData.player_level < 30:
-		return 4
+		weapon_scale_factor = 1.25
 	elif PlayerData.player_level >= 30 and PlayerData.player_level < 40:
-		return 6
+		weapon_scale_factor = 1.27
 	elif PlayerData.player_level >= 40 and PlayerData.player_level < 50:
-		return 8
+		weapon_scale_factor = 1.288
 	elif PlayerData.player_level >= 50 and PlayerData.player_level < 60:
-		return 10
+		weapon_scale_factor = 1.297
 	elif PlayerData.player_level >= 60 and PlayerData.player_level < 70:
-		return 12
+		weapon_scale_factor = 1.304
 	elif PlayerData.player_level >= 70 and PlayerData.player_level < 80:
-		return 14
+		weapon_scale_factor = 1.31
 	elif PlayerData.player_level >= 80 and PlayerData.player_level < 90:
-		return 16
+		weapon_scale_factor = 1.315
 	elif PlayerData.player_level >= 90:
-		return 18
+		weapon_scale_factor = 1.32
 
 func select_random_quality():
 	var weapon_quality
@@ -65,7 +66,8 @@ func create_random_weapon():
 	var weapon_name = weapon_quality[0]
 	var weapon_multiplier = weapon_quality[1]
 	var weapon_image = weapon_quality[2]
-	weapon_damage = base_damage * weapon_multiplier * pow(1.1, PlayerData.player_level)
+	get_weapon_scale_factor()
+	weapon_damage = base_damage * weapon_multiplier * pow(weapon_scale_factor, PlayerData.player_level)
 	if weapon_damage > PlayerData.player_weapon[1]:
 		PlayerData.player_weapon = [weapon_name, weapon_damage, weapon_image]
 		PlayerData.player_weapon_changed()
