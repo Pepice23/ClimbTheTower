@@ -62,6 +62,9 @@ var level_90_armor = {
 	"armor_picture": "res://assets/armors/level90.png",
 	"price": 125000
 }
+
+var armors = [level_10_armor, level_20_armor, level_30_armor, level_40_armor, level_50_armor, level_60_armor, level_70_armor, level_80_armor, level_90_armor]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
